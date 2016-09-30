@@ -14,10 +14,8 @@ Run the following command in your Node-RED user directory - typically `~/.node-r
 Usage
 -----
 
-Sends an SMS message using Kandy.
+Sends an SMS using Kandy.
 
-This out node is configured to send SMS.
+`msg.payload` is used as the body of the message. You can provide a number during configuration or alternatively, if the number is left blank, it can be set using `msg.topic`.
 
-`msg.payload` is used as the body of the message. You can provide a number while configuring or alternatively, if the number is left blank, it can be set using `msg.topic`.
-
-You must have an account with Kandy. You can register <a href="https://developer.kandy.io/signup">here</a>
+You must have an account with Kandy. You can register for one <a href="https://developer.kandy.io/signup">here</a>
