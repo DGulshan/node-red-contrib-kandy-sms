@@ -1,4 +1,4 @@
-node-red-node-kandy-sms
+node-red-contrib-kandy-sms
 =======================
 
 A <a href="http://nodered.org" target="_new">Node-RED</a> node to send SMS via <a href="https://developer.kandy.io" target="_new">Kandy</a>.
@@ -8,7 +8,7 @@ Install
 
 Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-    npm install node-red-node-kandy-sms
+    npm install node-red-contrib-kandy-sms
 
 
 Usage
