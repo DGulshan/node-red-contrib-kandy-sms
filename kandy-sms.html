@@ -64,33 +64,33 @@
         RED.nodes.registerType('kandy-user',{
             category: 'config',
             defaults: {
-                apikey: {value:"",required:true},
-                username: {value:"",required:true},
-                password: {value:"",required:true},
-                from: {value:"",required:true},
-                name: {value:""}
+                apikey: { value: '', required: true },
+                username: { value: '', required: true },
+                password: { value: '', required: true },
+                from: { value: '' },
+                name: { value: '' }
             },
             label: function() {
                 return this.name||this.from;
             }
         });
-        RED.nodes.registerType('kandy-sms out',{
+        RED.nodes.registerType('kandy-sms out', {
             category: 'mobile-output',
             defaults: {
-                user:{type:"kandy-user"},
-                number: {value:""},
-                name: {value:""}
+                user: { type:'kandy-user' },
+                number: { value: '' },
+                name: { value: '' }
             },
-            inputs:1,
-            outputs:0,
-            color: "#F5F5F5",
-            icon: "kandy-logo.png",
-            align: "right",
+            inputs: 1,
+            outputs: 0,
+            color: '#F5F5F5',
+            icon: 'kandy-logo.png',
+            align: 'right',
             label: function() {
-                return this.name||this.title||"kandy";
+                return this.name || this.title|| 'kandy';
             },
             labelStyle: function() {
-                return this.name?"node_label_italic":"";
+                return this.name ? 'node_label_italic' : '';
             }
         });
     })();

@@ -39,7 +39,7 @@ module.exports = function (RED) {
             this.key = this.user.key;
             this.username = this.user.username;
             this.password = this.user.password;
-            this.fromNumber = this.user.from;
+            this.from = this.user.from;
         } else {
             this.error('No kandy user');
             return;
@@ -52,6 +52,7 @@ module.exports = function (RED) {
                 msg.payload = JSON.stringify(msg.payload);
             }
 
+            node.from = node.from || ''
             node.number = node.number || msg.topic
 
             if (!node.number)

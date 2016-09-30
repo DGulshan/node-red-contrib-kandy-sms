@@ -1,6 +1,6 @@
 {
   "name": "node-red-node-kandy-sms",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Node-RED node to send SMS using Kandy.",
   "dependencies": {
     "node-rest-client": "^2.0.1"
