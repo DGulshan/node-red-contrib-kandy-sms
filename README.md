@@ -14,7 +14,7 @@ Run the following command in your Node-RED user directory - typically `~/.node-r
 Usage
 -----
 
-To send an SMS using Kandy’s REST API, you must have an account with Kandy. You can register for one <a href="https://developer.kandy.io/signup">here</a>.
+To send an SMS using Kandy’s REST API, you must have an account with Kandy. You can register for one <a href="https://developer.kandy.io/signup">here</a> using the promo code “kandyflow” to receive 5 free users that can each send 200 SMSs.
 
 If you don't have an account already:
 - Create an account. This will not take more than 5 minutes.
