@@ -1,0 +1,24 @@
+{
+  "name": "node-red-node-kandy-sms",
+  "version": "0.0.1",
+  "description": "A Node-RED node to send SMS messages using Kandy.",
+  "dependencies": {
+    "node-rest-client": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "node-red",
+    "kandy",
+    "sms"
+  ],
+  "node-red": {
+    "nodes": {
+      "kandy-sms": "kandy-sms.js"
+    }
+  },
+  "contributors": []
+}

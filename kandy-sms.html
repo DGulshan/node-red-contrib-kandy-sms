@@ -1,0 +1,97 @@
+<!--
+  Copyright 2016 GENBAND, Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/x-red" data-template-name="kandy-sms out">
+    <div class="form-row">
+        <label for="node-input-user"><i class="fa fa-user"></i> Kandy User</label>
+        <input type="text" id="node-input-user">
+    </div>
+    <div class="form-row">
+        <label for="node-input-number"><i class="fa fa-envelope-o"></i> To</label>
+        <input type="text" id="node-input-number" placeholder="01234 5678901">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="kandy-sms out">
+    <p>Sends a SMS message using the Kandy REST Api.</p>
+    <p><code>msg.payload</code> should contain the text of the SMS message.
+    The node can be configured with the number to send the message to.
+    Alternatively, if the number is left blank, it can be provided using <code>msg.topic</code>.
+    <p>You must have an account with Kandy. You can register <a href="https://developer.kandy.io/signup">here</a>.</p>
+    <p>Creating an account will take as less as 5 minutes, you will create a project and a user under it as part of the creating an account, which you can use with this node.</p>
+</script>
+
+<script type="text/x-red" data-template-name="kandy-user">
+    <div class="form-row">
+        <label for="node-config-input-apikey"> API Key</label>
+        <input type="text" id="node-config-input-apikey">
+    </div>
+    <div class="form-row">
+        <label for="node-config-username"> Username</label>
+        <input type="text" id="node-config-input-username">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="fa fa-lock"></i> Password</label>
+        <input type="password" id="node-config-input-password">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-from"><i class="fa fa-envelope"></i> From</label>
+        <input type="text" id="node-config-input-from" placeholder="01234 5678901">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/javascript">
+    (function() {
+        RED.nodes.registerType('kandy-user',{
+            category: 'config',
+            defaults: {
+                apikey: {value:"",required:true},
+                username: {value:"",required:true},
+                password: {value:"",required:true},
+                from: {value:"",required:true},
+                name: {value:""}
+            },
+            label: function() {
+                return this.name||this.from;
+            }
+        });
+        RED.nodes.registerType('kandy-sms out',{
+            category: 'mobile-output',
+            defaults: {
+                user:{type:"kandy-user"},
+                number: {value:""},
+                name: {value:""}
+            },
+            inputs:1,
+            outputs:0,
+            color: "#F5F5F5",
+            icon: "kandy-logo.png",
+            align: "right",
+            label: function() {
+                return this.name||this.title||"kandy";
+            },
+            labelStyle: function() {
+                return this.name?"node_label_italic":"";
+            }
+        });
+    })();
+</script>
